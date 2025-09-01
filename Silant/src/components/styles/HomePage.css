@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    --silant-blue: #163E6C;
+    --silant-red: #D20A11;
+    --silant-white: #EBE6D6;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Astra-Sans;
+    src: url("../../fonts/PT-Astra-Sans/Pt-Astra-Sans_Regular.ttf");
+    font-weight: normal;
+}
+
+body {
+    font-family: Astra-Sans, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--silant-white);
+}
+
+main {
+    padding: 0 40px;
+    margin: 40px 0;
+    flex: 1;
+    font-family: inherit;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.main-search {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 40px
+}
+
+.main-search-field {
+    border-style: solid;
+    border-color: #000;
+    border-radius: 4px;
+    width: 25%;
+    text-align: center;
+}
+
+.main-search-button {
+    font-family: inherit;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: var(--silant-blue);
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.main-search-button:active {
+    opacity: 90%;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-family: inherit;
+    background-color: var(--silant-blue);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.filters input {
+    border-style: solid;
+    border-color: #000;
+    max-width: 20%;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.car-table {
+    font-family: inherit;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.car-table th, .car-table td {
+    border: 1px solid var(--silant-blue);
+    padding: 8px;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.car-table td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.car-table th {
+    background-color: var(--silant-blue);
+    color: white;
+}
+
+.error {
+    color: var(--silant-red);
+    margin-top: 10px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    main {
+        padding: 0 15px;
+        margin: 20px 0;
+    }
+
+    .main-search {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .main-search-field {
+        width: 90%;
+    }
+
+    .button-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button-group button {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters input {
+        max-width: 90%;
+        margin-bottom: 10px;
+    }
+
+    /* Скрываем лишние колонки в таблицах */
+    .info-table th:not(:first-child):not(:nth-child(16)):not(:nth-child(17)),
+    .info-table td:not(:first-child):not(:nth-child(16)):not(:nth-child(17)) {
+        display: none;
+    }
+
+    .to-table th:not(:nth-child(2)):not(:nth-child(1)):not(:nth-child(6)),
+    .to-table td:not(:nth-child(2)):not(:nth-child(1)):not(:nth-child(6)) {
+        display: none;
+    }
+
+    .reclaims-table th:not(:nth-child(1)):not(:nth-child(3)):not(:nth-child(9)),
+    .reclaims-table td:not(:nth-child(1)):not(:nth-child(3)):not(:nth-child(9)) {
+        display: none;
+    }
+
+    .car-table-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .car-table {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-info {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .car-table {
+        font-size: 12px;
+    }
+
+    .car-table th, .car-table td {
+        padding: 4px;
+        font-size: 10px;
+    }
+}

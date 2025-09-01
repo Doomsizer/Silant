@@ -1,0 +1,41 @@
+.loginButton {
+    background-color: var(--silant-blue);
+    color: #fff;
+    font-family: inherit;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.loginButton:disabled {
+    cursor: not-allowed;
+    opacity: 40%;
+}
+
+.loginInput {
+    border-style: solid;
+    border-color: #000;
+    border-radius: 4px;
+    width: 60%;
+    text-align: center;
+}
+
+.loginMain {
+    display: flex;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
