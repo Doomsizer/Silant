@@ -64,8 +64,7 @@
 
 1. **Клонирование репозитория**
    ~~~
-   git clone <url-репозитория>
-   cd silant
+   git clone https://github.com/Doomsizer/Silant
    ~~~
 
 2. **Установка зависимостей**
